@@ -33,5 +33,37 @@ public class Main {
         System.out.println(c.getTitle()+" : "+c.getPublishDate()+" : "+ c.getComment());
 
 
+        System.out.println("X2");
+
+        List<BookX2> books2 = new ArrayList<BookX2>();
+
+        BookX2 aa = new BookX2("青い空",new Date(132,05,13),"清々しい気持ち");
+        books2.add(aa);
+        aa = new BookX2("うかる！行政書士",new Date(110,07,12),"勉強が続かない");
+        books2.add(aa);
+        aa = new BookX2("スッキリJava",new Date(109,9,15),"分かりやすい");
+        books2.add(aa);
+
+        for(BookX2 bb : books2){
+            System.out.println(bb.getTitle()+" : "+bb.getPublishDate()+" : "+ bb.getComment());
+        }
+
+        Collections.sort(books2);
+
+        for(BookX2 bb : books2){
+            System.out.println(bb.getTitle()+" : "+bb.getPublishDate()+" : "+ bb.getComment());
+        }
+        System.out.println();
+        BookX2 cc = null;
+        try {
+            cc = aa.clone();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(aa.getTitle()+" : "+aa.getPublishDate()+" : "+ aa.getComment());
+        System.out.println();
+        System.out.println(cc.getTitle()+" : "+cc.getPublishDate()+" : "+ cc.getComment());
+
+
     }
 }
